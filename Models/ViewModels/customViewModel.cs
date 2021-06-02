@@ -1,24 +1,24 @@
 ﻿using EPiServer.Core;
 using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using testSite.Models.Pages;
 
 namespace testSite.Models.ViewModels
 {
-    public class customViewModel<T> : PageViewModel
-
+    public class customViewModel<T> : PageViewModel<customPage>
     {
-        public customViewModel(T currentPage)
+        public customViewModel(customPage currentPage) : base(currentPage)
         {
             CurrentPage = currentPage;
         }
 
-        public T CurrentPage { get; set; }
+        public new customPage CurrentPage { get; set; }
     }
 
-    public static class customViewModel
+    public class customViewModel
     {
-        public static customViewModel<T> Create<T>(T page) where T: PageViewModel
+        public static customViewModel<T> Create<T>(T page) where T : customPage
         {
             return new customViewModel<T>(page);
         }

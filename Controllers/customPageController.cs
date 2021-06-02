@@ -10,7 +10,7 @@ namespace testSite.Controllers
     {
         public ActionResult Index(customPage currentPage)
         {
-            var model = PageViewModel.Create(currentPage);
+            var model = customViewModel.Create(currentPage);
             return View(model);
         }
     }
