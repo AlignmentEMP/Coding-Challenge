@@ -352,6 +352,7 @@
     <Compile Include="Models\SiteImageUrl.cs" />
     <Compile Include="Models\ViewModels\ContactBlockModel.cs" />
     <Compile Include="Models\ViewModels\ContentRenderingErrorModel.cs" />
+    <Compile Include="Models\ViewModels\customViewModel.cs" />
     <Compile Include="Models\ViewModels\ImageViewModel.cs" />
     <Compile Include="Models\ViewModels\IPageViewModel.cs" />
     <Compile Include="Models\ViewModels\LayoutModel.cs" />

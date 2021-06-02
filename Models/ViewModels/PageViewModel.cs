@@ -16,14 +16,8 @@ namespace testSite.Models.ViewModels
         public IContent Section { get; set; }
     }
 
-    public static class PageViewModel
+    public class PageViewModel
     {
-        /// <summary>
-        /// Returns a PageViewModel of type <typeparam name="T"/>.
-        /// </summary>
-        /// <remarks>
-        /// Convenience method for creating PageViewModels without having to specify the type as methods can use type inference while constructors cannot.
-        /// </remarks>
         public static PageViewModel<T> Create<T>(T page) where T : SitePageData
         {
             return new PageViewModel<T>(page);

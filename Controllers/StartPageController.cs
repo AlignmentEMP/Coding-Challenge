@@ -22,9 +22,7 @@ namespace testSite.Controllers
                 editHints.AddConnection(m => m.Layout.NewsPages, p => p.NewsPageLinks);
                 editHints.AddConnection(m => m.Layout.CustomerZonePages, p => p.CustomerZonePageLinks);
             }
-
             return View(model);
         }
-
     }
 }
