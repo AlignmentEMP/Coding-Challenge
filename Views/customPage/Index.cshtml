@@ -1,15 +1,44 @@
-﻿@using testSite
+﻿@using EPiServer.Core
+@using EPiServer.Web
+@using EPiServer.Web.Mvc.Html
 @model customViewModel<customPage>
 
-<!-- Dynamic name change-->
-<h1 @Html.EditAttributes(x => x.CurrentPage.PageName)>@Model.CurrentPage.PageName</h1>
-<!-- Dynamic description change-->
-<p class="introduction" @Html.EditAttributes(x => x.CurrentPage.MetaDescription)>@Model.CurrentPage.MetaDescription</p>
+<link rel="stylesheet" href="~/ClientResources/Styles/myStyles.css">
 
-<div class="row">
-    <div class="span8 clearfix" @Html.EditAttributes(x => x.CurrentPage.MainBody)>
-        @Html.DisplayFor(m => m.CurrentPage.MainBody)
-    </div>
+<p class="customClass">fafaf</p>
+
+<h3 @Html.EditAttributes(x => x.CurrentPage.customHeader)>@Model.CurrentPage.customHeader</h3>
+
+<div @Html.EditAttributes(x => x.CurrentPage.customPageImage)>
+    <img src="@Url.ContentUrl(Model.CurrentPage.customPageImage)" />
 </div>
+<br />
 
-@Html.PropertyFor(x => x.CurrentPage.MainContentArea, new { CssClass = "row", Tag = Global.ContentAreaTags.TwoThirdsWidth })
+<div @Html.EditAttributes(x => x.CurrentPage.customMainBody)>
+    @Html.DisplayFor(m => m.CurrentPage.customMainBody)
+</div>
+<hr />
+
+<table style="width:100%; border: 2px solid black; text-align:center">
+    <tr>
+        <th>Label</th>
+        <th>Value</th>
+    </tr>
+    @for (int i = 0; i < Model.CurrentPage.customDataPoints.Count(); i+= 2)
+    {
+        <tr>
+            <td @Html.EditAttributes(x => x.CurrentPage.customDataPoints)>@Model.CurrentPage.customDataPoints[i]</td>
+            @try
+            {
+                int j = i + 1;
+                <td @Html.EditAttributes(x => x.CurrentPage.customDataPoints)>@Model.CurrentPage.customDataPoints[j]</td>
+            }
+            
+            catch
+            {
+
+            }
+        </tr>
+    }
+</table>
+<hr />

@@ -319,13 +319,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Helpers\CategorizableExtensions.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\UrlHelpers.cs" />
     <Compile Include="Models\Blocks\ButtonBlock.cs" />
     <Compile Include="Models\Blocks\ContactBlock.cs" />
     <Compile Include="Models\Blocks\EditorialBlock.cs" />
-    <Compile Include="Models\Blocks\imageBlock.cs" />
     <Compile Include="Models\Blocks\JumbotronBlock.cs" />
     <Compile Include="Models\Blocks\PageListBlock.cs" />
     <Compile Include="Models\Blocks\SiteBlockData.cs" />
@@ -365,7 +365,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Static\css\customCSS\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\EPiServerDB_d0642ead.mdf" />
     <Content Include="App_Data\EPiServerDB_d0642ead_log.ldf">
@@ -388,6 +390,7 @@
     <Content Include="Static\css\bootstrap-collapse.js" />
     <Content Include="Static\css\bootstrap-responsive.css" />
     <Content Include="Static\css\bootstrap.css" />
+    <Content Include="ClientResources\Styles\myStyles.css" />
     <Content Include="Static\css\editmode.css" />
     <Content Include="Static\css\editor.css" />
     <Content Include="Static\css\media.css" />

@@ -70,6 +70,10 @@
         <name>Standard Page</name>
         <description>Used mainly for default editorial content such as text and images</description>
       </standardpage>
+      <customPage>
+        <name>Custom Page</name>
+        <description>Used for the coding challenge</description>
+      </customPage>
       <imagefile>
         <name>Image</name>
         <description>Used for image files (BMP, GIF, ICO, JPEG, PNG)</description>
