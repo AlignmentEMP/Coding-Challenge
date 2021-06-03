@@ -11,13 +11,29 @@ namespace testSite.Models.Pages
     {
         [Display(
             GroupName = SystemTabNames.Content,
-            Order = 310)]
+            Order = 200)]
+        public virtual ContentArea MainContentArea { get; set; }
+
+        [Display(
+            GroupName = SystemTabNames.Content,
+            Order = 201)]
+        public virtual XhtmlString Header { get; set; }
+
+        [Display(
+            GroupName = SystemTabNames.Content,
+            Order = 202)]
         [CultureSpecific]
         public virtual XhtmlString MainBody { get; set; }
 
         [Display(
             GroupName = SystemTabNames.Content,
-            Order = 320)]
-        public virtual ContentArea MainContentArea { get; set; }
+            Order = 203)]
+        public virtual XhtmlString Image { get; set; }
+
+        [Display(
+            GroupName = SystemTabNames.Content,
+            Order = 204)]
+        public virtual XhtmlString List { get; set; }
+
     }
 }

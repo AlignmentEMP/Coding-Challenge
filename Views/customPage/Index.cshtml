@@ -1,8 +1,6 @@
 ﻿@using testSite
 @model customViewModel<customPage>
 
-@{ Layout = "~/Views/Shared/Layouts/_LeftNavigation.cshtml"; }
-
 <!-- Dynamic name change-->
 <h1 @Html.EditAttributes(x => x.CurrentPage.PageName)>@Model.CurrentPage.PageName</h1>
 <!-- Dynamic description change-->
