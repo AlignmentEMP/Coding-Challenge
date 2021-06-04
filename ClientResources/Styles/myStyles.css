@@ -1,4 +1,47 @@
-﻿td:hover
+﻿td
 {
-    background-color: #bbb !important;
+    background-color: #ffffff;
+    transition: all 25ms linear;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 10px 0;
+    border: 1px solid black;
+}
+
+    td > span
+    {
+        padding: 5px 10% 5px 10%;
+    }
+
+    td:hover
+    {
+        background-color: #eeeeee;
+        transition: all 25ms linear;
+    }
+
+    td>span:active
+    {
+        border-radius: 8px;
+        background-color: #dddddd;
+        transition: all 25ms linear;
+    }
+
+th
+{
+    font-size: 2em;
+    width: 50%;
+    height: 2em;
+    background-color: #666666;
+    color: #ffffff;
+    border: 1px solid black;
+}
+
+table
+{
+    width: 100%;
+    border: 2px solid black;
+    text-align: center;
 }

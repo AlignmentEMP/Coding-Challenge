@@ -42,7 +42,6 @@ namespace testSite.Models.Pages
         [UIHint(Global.SiteUIHints.StringsCollection)]
         public virtual IList<string> customDataPoints { get; set; }
 
-
         [Display(
             GroupName = SystemTabNames.Content,
             Name = "Custom List with Images",

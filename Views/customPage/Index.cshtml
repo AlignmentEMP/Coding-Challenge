@@ -4,8 +4,7 @@
 @model customViewModel<customPage>
 
 <link rel="stylesheet" href="~/ClientResources/Styles/myStyles.css">
-
-<p class="customClass">fafaf</p>
+<script src="~/ClientResources/Scripts/copyText.js"></script>
 
 <h3 @Html.EditAttributes(x => x.CurrentPage.customHeader)>@Model.CurrentPage.customHeader</h3>
 
@@ -19,21 +18,29 @@
 </div>
 <hr />
 
-<table style="width:100%; border: 2px solid black; text-align:center">
+<table>
     <tr>
         <th>Label</th>
         <th>Value</th>
     </tr>
-    @for (int i = 0; i < Model.CurrentPage.customDataPoints.Count(); i+= 2)
+    @for (int i = 0; i < Model.CurrentPage.customDataPoints.Count(); i += 2)
     {
         <tr>
-            <td @Html.EditAttributes(x => x.CurrentPage.customDataPoints)>@Model.CurrentPage.customDataPoints[i]</td>
+            <td>
+                <span id="@string.Format("list{0}", i)" onclick="copyTextFunc(this.id)" @Html.EditAttributes(x => x.CurrentPage.customDataPoints)>
+                    @Model.CurrentPage.customDataPoints[i]
+                </span>
+            </td>
             @try
             {
                 int j = i + 1;
-                <td @Html.EditAttributes(x => x.CurrentPage.customDataPoints)>@Model.CurrentPage.customDataPoints[j]</td>
+                <td>
+                    <span id="@string.Format("list{0}", j)" onclick="copyTextFunc(this.id)" @Html.EditAttributes(x => x.CurrentPage.customDataPoints)>
+                        @Model.CurrentPage.customDataPoints[j]
+                    </span>
+                </td>
             }
-            
+
             catch
             {
 
