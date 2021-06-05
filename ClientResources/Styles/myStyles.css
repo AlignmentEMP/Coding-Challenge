@@ -1,4 +1,17 @@
-﻿td
+﻿.startFade
+{
+    opacity: 0%;
+    transition: all 500ms ease-in-out;
+}
+
+.destinationFade
+{
+    opacity: 100% !important;
+    transition: all 500ms ease-in-out;
+}
+
+/* First table */
+td.firstTable
 {
     background-color: #ffffff;
     transition: all 25ms linear;
@@ -11,25 +24,26 @@
     border: 1px solid black;
 }
 
-    td > span
-    {
-        padding: 5px 10% 5px 10%;
-    }
-
-    td:hover
+    td.firstTable:hover
     {
         background-color: #eeeeee;
         transition: all 25ms linear;
     }
 
-    td>span:active
+span.firstTable
+{
+    padding: 5px 10% 5px 10%;
+}
+
+    span.firstTable:active
     {
         border-radius: 8px;
         background-color: #dddddd;
         transition: all 25ms linear;
     }
 
-th
+
+th.firstTable
 {
     font-size: 2em;
     width: 50%;
@@ -39,9 +53,70 @@ th
     border: 1px solid black;
 }
 
-table
+table.firstTable
 {
     width: 100%;
     border: 2px solid black;
     text-align: center;
+}
+
+
+/* Second Table */
+td.secondTable
+{
+    background-color: #ffffff;
+    transition: all 25ms linear;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 10px 0;
+    border: 1px solid black;
+}
+
+    td.secondTable:hover
+    {
+        background-color: #eeeeee;
+        transition: all 25ms linear;
+    }
+
+span.secondTable
+{
+    padding: 5px 5% 5px 5%;
+}
+
+    span.secondTable:active
+    {
+        border-radius: 8px;
+        background-color: #dddddd;
+        transition: all 25ms linear;
+    }
+
+
+th.secondTable
+{
+    font-size: 2em;
+    width: 30vw;
+    height: 2em;
+    background-color: #666666;
+    color: #ffffff;
+    border: 1px solid black;
+}
+
+table.secondTable
+{
+    width: 100%;
+    border: 2px solid black;
+    text-align: center;
+}
+
+img.secondTable
+{
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

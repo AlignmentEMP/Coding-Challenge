@@ -1,0 +1,13 @@
+﻿@using EPiServer.Core
+@using testSite.Controllers
+@model customBlock
+<div class="border">
+    @using (Html.BeginConditionalLink(
+        !ContentReference.IsNullOrEmpty(Model.customLink) && !(ViewContext.Controller is PreviewController),
+        Url.PageLinkUrl(Model.customLink),
+        Model.customHeading))
+    {
+        <div @Html.EditAttributes(x => x.customImage)><img style="height: 50px; width: 50px;" src="@Url.ContentUrl(Model.customImage)" /></div>
+    }
+
+</div>

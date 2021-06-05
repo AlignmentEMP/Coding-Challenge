@@ -6,36 +6,36 @@
 <link rel="stylesheet" href="~/ClientResources/Styles/myStyles.css">
 <script src="~/ClientResources/Scripts/copyText.js"></script>
 
-<h3 @Html.EditAttributes(x => x.CurrentPage.customHeader)>@Model.CurrentPage.customHeader</h3>
+<h3 class="startFade" id="customHeader" @Html.EditAttributes(x => x.CurrentPage.customHeader)>@Model.CurrentPage.customHeader</h3>
 
 <div @Html.EditAttributes(x => x.CurrentPage.customPageImage)>
-    <img src="@Url.ContentUrl(Model.CurrentPage.customPageImage)" />
+    <img id="customImage" class="startFade" style="display: block; margin-left: auto; margin-right: auto; width: auto; height: 400px;" src="@Url.ContentUrl(Model.CurrentPage.customPageImage)" />
 </div>
 <br />
 
-<div @Html.EditAttributes(x => x.CurrentPage.customMainBody)>
+<div class="startFade" id="customMainBody" @Html.EditAttributes(x => x.CurrentPage.customMainBody)>
     @Html.DisplayFor(m => m.CurrentPage.customMainBody)
 </div>
 <hr />
 
-<table>
+<table class="firstTable startFade" id="customTable1">
     <tr>
-        <th>Label</th>
-        <th>Value</th>
+        <th class="firstTable">Label</th>
+        <th class="firstTable">Value</th>
     </tr>
     @for (int i = 0; i < Model.CurrentPage.customDataPoints.Count(); i += 2)
     {
         <tr>
-            <td>
-                <span id="@string.Format("list{0}", i)" onclick="copyTextFunc(this.id)" @Html.EditAttributes(x => x.CurrentPage.customDataPoints)>
+            <td class="firstTable">
+                <span class="firstTable" id="@string.Format("list{0}", i)" onclick="copyTextFunc(this.id)" @Html.EditAttributes(x => x.CurrentPage.customDataPoints)>
                     @Model.CurrentPage.customDataPoints[i]
                 </span>
             </td>
             @try
             {
                 int j = i + 1;
-                <td>
-                    <span id="@string.Format("list{0}", j)" onclick="copyTextFunc(this.id)" @Html.EditAttributes(x => x.CurrentPage.customDataPoints)>
+                <td class="firstTable">
+                    <span class="firstTable" id="@string.Format("list{0}", j)" onclick="copyTextFunc(this.id)" @Html.EditAttributes(x => x.CurrentPage.customDataPoints)>
                         @Model.CurrentPage.customDataPoints[j]
                     </span>
                 </td>
@@ -49,3 +49,36 @@
     }
 </table>
 <hr />
+
+<table class="secondTable startFade" id="customTable2">
+    <tr>
+        <th class="secondTable">Label</th>
+        <th class="secondTable">Value</th>
+        <th class="secondTable">Image</th>
+    </tr>
+    @for (int i = 0; i < Model.CurrentPage.customLabelsUserDefined.Count(); i++)
+    {
+        <tr>
+            <td class="secondTable">
+                <span class="secondTable" @Html.EditAttributes(x => x.CurrentPage.customLabelsUserDefined)>
+                    @Model.CurrentPage.customLabelsUserDefined[i]
+                </span>
+            </td>
+            <td class="secondTable">
+                <span class="secondTable" @Html.EditAttributes(x => x.CurrentPage.customValuesUserDefined)>
+                    @Model.CurrentPage.customValuesUserDefined[i]
+                </span>
+            </td>
+            <td class="secondTable">
+                <span @Html.EditAttributes(x => x.CurrentPage.customImagesUserDefined)>
+                    <img class="secondTable" src="@Url.ContentUrl(Model.CurrentPage.customImagesUserDefined[i])" />
+                </span>
+            </td>
+        </tr>
+    }
+</table>
+<hr />
+
+<div class="startFade" id="customCont">
+    @Html.PropertyFor(x => x.CurrentPage.customContentArea, new { CssClass = "row" })
+</div>

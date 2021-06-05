@@ -35,6 +35,7 @@ namespace testSite.Models.Pages
             Order = 3)]
         public virtual XhtmlString customMainBody { get; set; }
 
+        [Required]
         [Display(
             GroupName = SystemTabNames.Content,
             Name = "Custom Data Points",
@@ -42,10 +43,51 @@ namespace testSite.Models.Pages
         [UIHint(Global.SiteUIHints.StringsCollection)]
         public virtual IList<string> customDataPoints { get; set; }
 
+        [Required]
         [Display(
             GroupName = SystemTabNames.Content,
-            Name = "Custom List with Images",
+            Name = "Custom Labels List (use with 2 below)",
             Order = 5)]
-        public virtual IList<string> customLabelValueImageList { get; set; }
+        public virtual IList<string> customLabelsUserDefined { get; set; }
+
+        [Required]
+        [Display(
+            GroupName = SystemTabNames.Content,
+            Name = "Custom Values List (use with above and below)",
+            Order = 5)]
+        public virtual IList<int> customValuesUserDefined { get; set; }
+
+        [Required]
+        [Display(
+            GroupName = SystemTabNames.Content,
+            Name = "Custom Images List (use with 2 above)",
+            Order = 5)]
+        public virtual IList<ContentReference> customImagesUserDefined { get; set; }
+
+
+        //My first attempt at creating a 2D list that accepts generics, but it's actually not what I want here, as
+        //there is no user-friendly way to import data like this
+        /*[Display(
+            GroupName = SystemTabNames.Content,
+            Name = "Generic Property List",
+            Order = 6)]
+        [EditorDescriptor(EditorDescriptorType = typeof(CollectionEditorDescriptor<testGenericDataPoints<string, int, ContentReference>>))]
+        public virtual IList<testGenericDataPoints<string, int, ContentReference>> genericDataList { get; set; }
+
+        public class testGenericDataPoints<T1, T2, T3>
+        {
+            public virtual T1 Label { get; set; }
+            public virtual T2 Value { get; set; }
+            public virtual T3 Image { get; set; }
+        }
+
+        [PropertyDefinitionTypePlugIn]
+        public class testGenericProperty : PropertyList<testGenericDataPoints<string, int, ContentReference>> { }*/
+
+        [Display(
+            GroupName = SystemTabNames.Content,
+            Order = 310)]
+        public virtual ContentArea customContentArea { get; set; }
+
     }
 }

@@ -325,6 +325,7 @@
     <Compile Include="Helpers\UrlHelpers.cs" />
     <Compile Include="Models\Blocks\ButtonBlock.cs" />
     <Compile Include="Models\Blocks\ContactBlock.cs" />
+    <Compile Include="Models\Blocks\customBlock.cs" />
     <Compile Include="Models\Blocks\EditorialBlock.cs" />
     <Compile Include="Models\Blocks\JumbotronBlock.cs" />
     <Compile Include="Models\Blocks\PageListBlock.cs" />
@@ -483,6 +484,7 @@
     <Content Include="Views\ContactBlock\Index.cshtml" />
     <Content Include="Views\ArticlePage\Index.cshtml" />
     <Content Include="Views\customPage\Index.cshtml" />
+    <Content Include="Views\Shared\Blocks\customBlock.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
